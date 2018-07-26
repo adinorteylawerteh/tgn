@@ -31,6 +31,7 @@ import { PackagePage } from '../pages/vendor/package/package';
 import { VPaymentsPage } from '../pages/vendor/payments/payments';
 import { SalePage } from '../pages/vendor/sale/sale';
 import { StockPage } from '../pages/vendor/stock/stock';
+import { AboutPage } from '../pages/about/about';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -59,6 +60,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     VPaymentsPage,
     SalePage,
     StockPage,
+    AboutPage,
   ],
   imports: [
     BrowserModule,
@@ -89,6 +91,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     VPaymentsPage,
     SalePage,
     StockPage,
+    AboutPage,
   ],
   providers: [
     StatusBar,

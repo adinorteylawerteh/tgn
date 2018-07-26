@@ -11,6 +11,7 @@ import { CatPage } from '../category/category';
 import { ProductPage } from '../product/product';
 import { DownloadsPage } from '../downloads/downloads';
 import { MenuController } from 'ionic-angular';
+import { AboutPage } from '../about/about';
 
 @Component({
   selector: 'page-home',
@@ -287,6 +288,9 @@ export class HomePage {
       });
   }
 
+  openAbout() {
+    this.navCtrl.push(AboutPage);
+  }
 
   openTV() {
     this.navCtrl.push(DownloadsPage);
