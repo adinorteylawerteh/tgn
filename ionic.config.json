@@ -1,6 +1,6 @@
 {
   "name": "goodnewsapp",
-  "app_id": "",
+  "app_id": "8004c3f7",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

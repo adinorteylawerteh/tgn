@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="black">
+    <button ion-button menuToggle>
+      <ion-icon name="ios-menu-outline"></ion-icon>
+    </button>
+    <ion-title>Search</ion-title>
+  </ion-navbar>
+  <ion-searchbar color="black" (ionInput)="getPbySearch()" [(ngModel)]="term"></ion-searchbar>
+</ion-header>
+
+<ion-content fullscreen style=" background: url(assets/imgs/bg.jpg);background-size: cover;">
+  <ion-list-header style="margin-right:0px;background-color: transparent;color: #fff;font-weight: bold;margin-bottom: 0px;border: none;">
+    VIDEO LIBRARY
+  </ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of homevideos" col-6>
+        <ion-card style=" margin: 0px;width: 100%;border-bottom-right-radius: 2px;border-bottom-left-radius: 2px; ">
+        <img src="{{ item.snippet.thumbnails.high.url }}" (click)="view(item.id.videoId,'video',item.snippet.title)" style=" height: 133px; object-fit: cover; box-shadow: 0px 1px 11px 1px #00000069; "/>
+        <div style="position: absolute;z-index: 99;background: linear-gradient(to bottom, rgba(0, 0, 0, 0.10980392156862745) 0%,rgba(0, 0, 0, 0.5019607843137255) 50%);left: 0px;bottom: 0px;color: #fff;text-align: left;padding: 5px 7px;font-size: 10px;text-transform: uppercase;width: calc(100% - 10px);margin: 5px;border-bottom-right-radius: 2px;border-bottom-left-radius: 2px;">
+          <p [innerHTML]="item.snippet.title" style="color:#fff;font-weight:bold;font-size: 12px;">
+          </p>
+        </div>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list-header style="margin-right:0px;background-color: transparent;color: #fff;font-weight: bold;margin-bottom: 0px;border: none;">
+    AUDIO LIBRARY
+  </ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of homeaudio" col-6>
+        <ion-card style="margin: 0px;width: 100%;border-top: 5px solid #673AB7;" (click)="view(item.id,'audio',item.title.rendered)">
+          <ion-row>
+            <ion-col col-4 style=" background: #e4e4e4; ">
+              <ion-icon name="volume-up" style="font-size: 28px;padding: 13px;"></ion-icon>
+            </ion-col>
+            <ion-col col-8>
+              <ion-card-content style=" padding: 4px 10px; text-align: left; ">
+                <ion-card-title style=" font-weight: bold; text-transform: uppercase; font-size: 11px; " [innerHTML]="item.title.rendered"></ion-card-title>
+              </ion-card-content>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list-header style="margin-right:0px;background-color: transparent;color: #fff;font-weight: bold;margin-bottom: 0px;border: none;">
+    ARTICLES & POSTS
+  </ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of homearticle" col-6>
+        <ion-card style=" margin: 0px;width: 100%;border-bottom-right-radius: 2px;border-bottom-left-radius: 2px; ">
+        <img src="{{ item.better_featured_image.source_url }}" (click)="thisProduct(item.id)" style=" height: 133px; object-fit: cover; box-shadow: 0px 1px 11px 1px #00000069; "/>
+        <div style="position: absolute;z-index: 99;background: linear-gradient(to bottom, rgba(0, 0, 0, 0.10980392156862745) 0%,rgba(0, 0, 0, 0.5019607843137255) 50%);left: 0px;bottom: 0px;color: #fff;text-align: left;padding: 5px 7px;font-size: 10px;text-transform: uppercase;width: calc(100% - 10px);margin: 5px;border-bottom-right-radius: 2px;border-bottom-left-radius: 2px;">
+          <p [innerHTML]="item.title.rendered" style="color:#fff;font-weight:bold;font-size: 10px;">
+          </p>
+        </div>
+      </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

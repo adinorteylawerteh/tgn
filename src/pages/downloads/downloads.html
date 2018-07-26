@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="white">
+    <button ion-button menuToggle>
+      <ion-icon name="ios-menu-outline"></ion-icon>
+    </button>
+    <ion-title>TV</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style=" background-color: #f1f1f1;text-align:center; " padding>
+  <ion-slides style=" height: 190px;box-shadow: 1px 1px 16px 3px rgba(0, 0, 0, 0.32941176470588235); " loop="true" autoplay="2300" speed="50">
+    <ion-slide>
+      <img src="https://i.ytimg.com/vi/fI22VF0qFfQ/sddefault.jpg" style="height:200px;width:100%;object-fit:cover;" />
+    </ion-slide>
+    <ion-slide *ngFor="let item of playlist">
+      <img src="{{ item.snippet.thumbnails.high.url }}" style="height:200px;width:100%;object-fit:cover;" />
+      <div style=" position: absolute; z-index: 99; background: rgba(0, 0, 0, 0.49019607843137253); left: 0px; bottom: 0px; color: #fff; text-align: left; padding: 0px 15px;width:100%; ">
+        <p>
+          {{ item.snippet.title }}
+        </p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <br />
+  <ion-row>
+    <ion-col col-6 *ngFor="let item of downloads">
+      <ion-card style="margin: 0px;width: 100%;">
+        <img src="{{ item.snippet.thumbnails.high.url }}" (click)="play(item.id.videoId);" style=" height: 133px; object-fit: cover; box-shadow: 0px 1px 11px 1px #00000069; "/>
+        <ion-card-content (click)="play(item.id.videoId);" style=" padding: 4px 10px; text-align: left; ">
+          <ion-card-title style=" font-weight: bold; text-transform: uppercase; font-size: 15px; ">
+            {{ item.snippet.title }}
+            </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
