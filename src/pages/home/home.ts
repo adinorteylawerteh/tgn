@@ -152,7 +152,7 @@ export class HomePage {
 
   getSlides() {
     let loader = this.loadingCtrl.create({
-      content: "Preparing your collection...",
+      content: "Loading featured contents...",
     });
     loader.present();
     return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&playlistId=PLA1XUM0-PHp_wXiDyA7XpfXwp0eyiqIgp&part=snippet,contentDetails&order=date&maxResults=4`)
@@ -172,7 +172,7 @@ export class HomePage {
 
   getAudioSlides() {
     let loader = this.loadingCtrl.create({
-      content: "Preparing your collection...",
+      content: "Loading featured contents...",
     });
     loader.present();
     return this.http.get(`https://goodnewsoutreachministries.com/wp-json/wp/v2/media?media_type=audio&per_page=2`)
