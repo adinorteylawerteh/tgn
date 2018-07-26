@@ -12,6 +12,7 @@ import { ProductPage } from '../product/product';
 import { DownloadsPage } from '../downloads/downloads';
 import { MenuController } from 'ionic-angular';
 import { AboutPage } from '../about/about';
+import { PartnerPage } from '../partner/partner';
 
 @Component({
   selector: 'page-home',
@@ -302,6 +303,11 @@ export class HomePage {
 
   play(id) {
     this.youtube.openVideo(id);
+  }
+
+
+  openPartner() {
+    this.navCtrl.push(PartnerPage);
   }
 
   view(id,type,title) {

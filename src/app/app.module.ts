@@ -32,7 +32,7 @@ import { VPaymentsPage } from '../pages/vendor/payments/payments';
 import { SalePage } from '../pages/vendor/sale/sale';
 import { StockPage } from '../pages/vendor/stock/stock';
 import { AboutPage } from '../pages/about/about';
-
+import { PartnerPage } from '../pages/partner/partner';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -61,6 +61,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SalePage,
     StockPage,
     AboutPage,
+    PartnerPage,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +93,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SalePage,
     StockPage,
     AboutPage,
+    PartnerPage,
   ],
   providers: [
     StatusBar,
