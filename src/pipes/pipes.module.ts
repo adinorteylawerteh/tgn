@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CatsPipe } from './cats/cats';
-import { YoutubePipe } from './youtube/youtube';
+import { Youtube } from './youtube/youtube';
 @NgModule({
 	declarations: [CatsPipe,
-    YoutubePipe],
+    Youtube],
 	imports: [],
 	exports: [CatsPipe,
-    YoutubePipe]
+    Youtube]
 })
 export class PipesModule {}
