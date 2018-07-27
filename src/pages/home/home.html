@@ -35,6 +35,10 @@
 <div [ngSwitch]="tabs" style="margin-top: 97px;">
   <ion-list *ngSwitchCase="'home'">
     <p style=" color: #fff; padding: 15px 15px; text-align: center; background: rgba(51, 51, 51, 0.30196078431372547); margin: 0px; line-height: 1.5; " [innerHTML]="quote"></p>
+    <div padding style=" background: rgba(51, 51, 51, 0.30196078431372547);">
+      <button ion-button full round color="white" (click)="view('18FE8hYZiWk','video','Receive Christ Now');">Receive Christ Now</button>
+    </div>
+
     <ion-slides style="height: 150px;margin-top: 10px;" loop="true" autoplay="2300" speed="500" slidesPerView="3" spaceBetween="10">
       <ion-slide *ngIf="noaudio==true"></ion-slide>
       <ion-slide *ngFor="let item of slides">

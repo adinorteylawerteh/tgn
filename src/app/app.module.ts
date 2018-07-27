@@ -20,6 +20,7 @@ import { CatPage } from '../pages/category/category';
 import { ProfilePage } from '../pages/profile/profile';
 import { SearchPage } from '../pages/search/search';
 import { DealsPage } from '../pages/deals/deals';
+import { YoutubePage } from '../pages/youtube/youtube';
 
 import { OrdersPage } from '../pages/orders/orders';
 import { DownloadsPage } from '../pages/downloads/downloads';
@@ -35,6 +36,8 @@ import { AboutPage } from '../pages/about/about';
 import { PartnerPage } from '../pages/partner/partner';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { Youtube } from '../pipes/youtube/youtube';
 
 @NgModule({
   declarations: [
@@ -62,6 +65,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StockPage,
     AboutPage,
     PartnerPage,
+    YoutubePage,
+    Youtube,
   ],
   imports: [
     BrowserModule,
@@ -94,6 +99,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StockPage,
     AboutPage,
     PartnerPage,
+    YoutubePage,
   ],
   providers: [
     StatusBar,

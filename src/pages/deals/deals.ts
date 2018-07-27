@@ -9,6 +9,7 @@ import { LoadingController } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { ProductPage } from '../product/product';
+import { YoutubePage } from '../youtube/youtube';
 
 @Component({
   selector: 'page-deals',
@@ -40,7 +41,7 @@ export class DealsPage {
       .map((res:Response) => res.json())
       .subscribe(
         data => {
-          this.image = data.items[0].snippet.thumbnails.standard.url;
+          this.image = data.items[0].snippet.thumbnails.default.url;
           this.title = data.items[0].snippet.title;
           this.channeltitle = data.items[0].snippet.channelTitle;
           this.type = type;
@@ -75,7 +76,9 @@ export class DealsPage {
 
   play(id,type,file) {
     if(type == "video") {
-      this.youtube.openVideo(id);
+      this.navCtrl.push(YoutubePage, {
+        id: id,
+      });
     } else if(type == "audio") {
       let options: StreamingVideoOptions = {
         successCallback: () => { console.log('Audio played') },
@@ -85,4 +88,5 @@ export class DealsPage {
       this.streamingMedia.playAudio(file, options);
     }
   }
+
 }
