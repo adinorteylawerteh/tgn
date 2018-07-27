@@ -75,7 +75,7 @@ export class SearchPage {
 
 
   getHomeArticles() {
-    return this.http.get(`https://goodnewsoutreachministries.com/wp-json/wp/v2/posts?per_page=20&search=`+this.term)
+    return this.http.get(`https://goodnewsoutreachministries.com/wp-json/wp/v2/posts?per_page=20&categories=50&search=`+this.term)
     .map((res:Response) => res.json())
     .subscribe(
       data => {

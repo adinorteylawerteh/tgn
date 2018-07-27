@@ -99,7 +99,7 @@ export class HomePage {
   }
 
   getHomeVideos() {
-    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&channelId=UCWKO3WX4vD96_BqqaPUjN3g&part=snippet,id&order=date&maxResults=4`)
+    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&playlistId=PLA1XUM0-PHp-u1kSaxiHb8vrt5OiEmw3O&part=snippet,id&order=date&maxResults=4`)
     .map((res:Response) => res.json())
     .subscribe(
       data => {
@@ -156,7 +156,7 @@ export class HomePage {
       content: "Loading featured contents...",
     });
     loader.present();
-    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&playlistId=PLA1XUM0-PHp_wXiDyA7XpfXwp0eyiqIgp&part=snippet,contentDetails&order=date&maxResults=4`)
+    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&playlistId=PLA1XUM0-PHp-u1kSaxiHb8vrt5OiEmw3O&part=snippet,contentDetails&order=date&maxResults=4`)
     .map((res:Response) => res.json())
     .subscribe(
       data => {
@@ -258,7 +258,7 @@ export class HomePage {
     content: "Getting video lessons...",
   });
     loader.present();
-    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&playlistId=PLA1XUM0-PHp_wXiDyA7XpfXwp0eyiqIgp&part=snippet,contentDetails&order=date&maxResults=20`)
+    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&playlistId=PLA1XUM0-PHp-u1kSaxiHb8vrt5OiEmw3O&part=snippet,contentDetails&order=date&maxResults=20`)
     .map((res:Response) => res.json())
     .subscribe(
       data => {
@@ -276,7 +276,7 @@ export class HomePage {
     content: "Loading video lessons...",
   });
     loader.present();
-    return this.http.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&channelId=UCWKO3WX4vD96_BqqaPUjN3g&part=snippet,id&order=date&maxResults=20`)
+    return this.http.get(`https://www.googleapis.com/youtube/v3/playlistItems?key=AIzaSyAoU3_0XZV9TdTC4mW9t68vae2zZlep96Q&playlistId=PLA1XUM0-PHp-u1kSaxiHb8vrt5OiEmw3O&part=snippet,id&order=date&maxResults=20`)
     .map((res:Response) => res.json())
     .subscribe(
       data => {
