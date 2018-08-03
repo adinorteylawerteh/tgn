@@ -76,9 +76,10 @@ export class DealsPage {
 
   play(id,type,file) {
     if(type == "video") {
-      this.navCtrl.push(YoutubePage, {
+      window.open('https://goodnewsoutreachministries.com/vids.php?watch='+id, '_system');
+      /*this.navCtrl.push(YoutubePage, {
         id: id,
-      });
+      });*/
     } else if(type == "audio") {
       let options: StreamingVideoOptions = {
         successCallback: () => { console.log('Audio played') },

@@ -7,6 +7,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -109,6 +110,7 @@ import { Youtube } from '../pipes/youtube/youtube';
     YoutubeVideoPlayer,
     NativeAudio,
     StreamingMedia,
+    BackgroundMode,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

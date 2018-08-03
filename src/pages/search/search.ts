@@ -5,7 +5,7 @@ import { LoadingController } from 'ionic-angular';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/timeout';
-
+import { DealsPage } from '../deals/deals';
 import { ProductPage } from '../product/product';
 
 @Component({
@@ -90,6 +90,14 @@ export class SearchPage {
   thisProduct(id) {
     this.navCtrl.push(ProductPage, {
       id:id,
+    });
+  }
+
+  view(id,type,title) {
+    this.navCtrl.push(DealsPage, {
+      id: id,
+      type: type,
+      title: title,
     });
   }
 
