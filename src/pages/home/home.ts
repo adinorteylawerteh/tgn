@@ -126,7 +126,7 @@ export class HomePage {
 
 
   getHomeArticles() {
-    return this.http.get(`https://goodnewsoutreachministries.com/wp-json/wp/v2/posts?per_page=4&categories=50`)
+    return this.http.get(`https://goodnewsoutreachministries.com/wp-json/wp/v2/book?per_page=4&categories=50`)
     .map((res:Response) => res.json())
     .subscribe(
       data => {
@@ -196,7 +196,7 @@ export class HomePage {
     content: "Getting articles & posts...",
   });
     loader.present();
-    return this.http.get(`https://goodnewsoutreachministries.com/wp-json/wp/v2/posts?categories=50`)
+    return this.http.get(`https://goodnewsoutreachministries.com/wp-json/wp/v2/book?categories=50`)
     .map((res:Response) => res.json())
     .subscribe(
       data => {

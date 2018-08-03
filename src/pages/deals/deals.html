@@ -16,7 +16,9 @@
     {{ channeltitle }}
   </p>
   <br />
-  <button ion-button color="white" round full large icon-start (click)="play(id,type,file);"><ion-icon name="play"></ion-icon> PLAY</button>
+  <button *ngIf="type == 'audio'" ion-button color="white" round full large icon-start (click)="play(id,type,file);"><ion-icon name="volume-up"></ion-icon> LISTEN</button>
+  <button *ngIf="type == 'video'" ion-button color="white" round full large icon-start (click)="play(id,type,file);"><ion-icon name="play"></ion-icon> PLAY</button>
+  <button *ngIf="type == 'book'" ion-button color="white" round full large icon-start (click)="play(id,type,file);"><ion-icon name="book"></ion-icon> READ</button>
   <br />
   <button style="border:2px solid #fff;color: #fff;height: 50px;font-size: 12px;margin: 15px auto;width: 50px;display:  block;" ion-button round large icon-only clear><ion-icon name="share"></ion-icon></button>
 </div>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.goodnewsoutreachministries.tgn" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.thegoodnews.tgn" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>The Goodnews</name>
     <description>The Goodnews App</description>
     <author email="info@goodnewsoutreachministries.com" href="https://goodnewsoutreachministries.com/">Goodnews Outreach Ministries</author>
@@ -85,7 +85,6 @@
     <allow-navigation href="https://goodnewsoutreachministries.com/" />
     <allow-navigation href="http://192.168.1.180:8100" />
     <access origin="*://*.goodnewsoutreachministries.com/*" />
-    <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
@@ -95,4 +94,9 @@
     <plugin name="cordova-plugin-nativeaudio" spec="^3.0.9" />
     <plugin name="cordova-plugin-streaming-media" spec="^2.1.2" />
     <plugin name="cordova-plugin-background-mode" spec="^0.7.2" />
+    <plugin name="cordova-plugin-document-viewer" spec="^0.9.10" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
+    <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
+    <engine name="android" spec="~6.3.0" />
 </widget>

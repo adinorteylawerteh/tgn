@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { Http, Response } from '@angular/http';
+import { FileOpener } from '@ionic-native/file-opener';
 import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/timeout';
@@ -24,7 +25,7 @@ export class DealsPage {
   id: string;
   file: string;
 
-  constructor(public navCtrl: NavController, public http: Http, private navParams: NavParams, public loadingCtrl: LoadingController, private youtube: YoutubeVideoPlayer, private streamingMedia: StreamingMedia) {
+  constructor(public navCtrl: NavController, public http: Http, private navParams: NavParams, public loadingCtrl: LoadingController, private youtube: YoutubeVideoPlayer, private streamingMedia: StreamingMedia,private fileOpener: FileOpener) {
     this.file = "";
     this.getDeals(navParams.get('id'),navParams.get('type'),navParams.get('title'));
   }
@@ -71,6 +72,24 @@ export class DealsPage {
           console.log(error.data);
           loader.dismiss();
         });
+    } else if(type == "book") {
+
+      return this.http.get("https://goodnewsoutreachministries.com/wp-json/wp/v2/book/"+id+"")
+      .map((res:Response) => res.json())
+      .subscribe(
+        data => {
+          this.image = data.better_featured_image.source_url;
+          this.title = data.title.rendered;
+          this.channeltitle = "Goodnews Outreach Ministries";
+          this.type = type;
+          this.id = id;
+          this.file = data.guid.rendered;
+          loader.dismiss();
+        },
+        error => {
+          console.log(error.data);
+          loader.dismiss();
+        });
     }
   }
 
@@ -87,6 +106,11 @@ export class DealsPage {
       };
 
       this.streamingMedia.playAudio(file, options);
+    } else if(type == "book") {
+      this.fileOpener.open('assets/dummy.pdf', 'application/pdf')
+  .then(() => console.log('File is opened'))
+  .catch(e => console.log('Error opening file', e));
+    /*  window.open('https://goodnewsoutreachministries.com/wp-json/bookfile/v1/file?id='+id, '_system');*/
     }
   }
 
